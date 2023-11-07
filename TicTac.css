@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    color: #fff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    height: 100vh;
+    background: #5a4887;
+}
+
+.result {
+    text-align: center;
+    position: absolute;
+    top: -10%;
+    left: 0;
+
+    background: #64ff766c;
+    width: 100%;
+    height: 50px;
+}
+
+.animate { animation: animate 1s forwards; }
+
+@keyframes animate {
+    100% {
+        top: 0;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 90% 10%;
+
+    width: 40%;
+    height: 60%;
+}
+
+.cells {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid transparent;
+    border-image: linear-gradient(#ffe062 , #5a4887);
+    border-image-slice: 1;
+    height: 100px;
+    cursor: pointer;
+    color: #ffe062;
+}
+
+.cells:nth-child(1),
+.cells:nth-child(4),
+.cells:nth-child(7) { border-left: none; }
+
+.cells:nth-child(3),
+.cells:nth-child(6),
+.cells:nth-child(9) { border-right: none; }
+
+.cells:nth-child(7),
+.cells:nth-child(8),
+.cells:nth-child(9) { border-bottom: none; }
+
+.cells:nth-child(1),
+.cells:nth-child(2),
+.cells:nth-child(3) { border-top: none; }
+
+.container > div {
+    display: grid;
+    grid-template-columns: repeat(3, 33.3%);
+}
+
+.buttonRemove {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 53px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 50px;
+
+    transition: .3s ease-in;
+}
+
+.buttonRemove:hover {
+    background: #ffe062;
+    color: #5a4887;
+    transition: .3s ease-in;
+}
