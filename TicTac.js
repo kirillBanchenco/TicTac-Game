@@ -14,6 +14,8 @@ const startGame = () => {
             if (e.target.innerText == '') {
                 e.target.innerText = player;
                 
+                cell.disabled = true;
+                
                 if (checkedWin()) {
                     result.classList.add('animate');
                     result.innerText = `${player} won`;
